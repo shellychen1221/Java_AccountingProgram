@@ -59,24 +59,24 @@ public class Homepage {
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.getContentPane().setLayout(null);
 
-      JButton btnNewButton = new JButton("list");
-      btnNewButton.setBounds(128, 82, 109, 55);
-      setting(frame, btnNewButton);
-      btnNewButton.addActionListener(new ActionListener() {
+      JButton listButton = new JButton("list");
+      listButton.setBounds(128, 82, 109, 55);
+      setting(frame, listButton);
+      listButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             Accounting s1 = new Accounting();
             s1.Screen2();
          }
       });
-      JButton btnNewButton_1 = new JButton("reminder");
-      btnNewButton_1.setBounds(110, 164, 144, 55);
-      setting(frame, btnNewButton_1);
-      btnNewButton_1.addActionListener(new ActionListener() {
+      JButton reminderButton = new JButton("reminder");
+      reminderButton.setBounds(110, 164, 144, 55);
+      setting(frame, reminderButton);
+      reminderButton.addActionListener(new ActionListener() {
           public void actionPerformed(ActionEvent e) {
-              String budgetInput = JOptionPane.showInputDialog(btnNewButton_1, "Please input a budget:");
+              String budgetInput = JOptionPane.showInputDialog(reminderButton, "Please input a budget:");
 
               if (budgetInput == null || budgetInput.isEmpty()) {
-                  JOptionPane.showMessageDialog(btnNewButton_1, "Invalid budget input");
+                  JOptionPane.showMessageDialog(reminderButton, "Invalid budget input");
                   return;
               }
               int enteredBudget = Integer.parseInt(budgetInput);
@@ -100,7 +100,7 @@ public class Homepage {
               } catch (FileNotFoundException e1) {
                   e1.printStackTrace();
               }
-               JOptionPane.showMessageDialog(btnNewButton_1, 
+               JOptionPane.showMessageDialog(reminderButton, 
                   "Budget is sufficient. You are within the budget limit.");
 
               String filePath_budget = "hello/budget.txt";
@@ -126,38 +126,38 @@ public class Homepage {
 
               } catch (IOException ex) {
                   ex.printStackTrace();
-                  JOptionPane.showMessageDialog(btnNewButton_1, 
+                  JOptionPane.showMessageDialog(reminderButton, 
                       "Error while creating budget.txt: " + ex.getMessage());
               }
           }
       });
-      JButton btnNewButton_2 = new JButton("graph analysis");
-      btnNewButton_2.setBounds(85, 248, 191, 55);
-      setting(frame, btnNewButton_2);
-      btnNewButton_2.addActionListener(new ActionListener() {
+      JButton GraphButton = new JButton("graph analysis");
+      GraphButton.setBounds(85, 248, 191, 55);
+      setting(frame, GraphButton);
+      GraphButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             GraphAnalysis s3 = new GraphAnalysis();
             s3.Screen3();
          }
       });
 
-      JLabel lblNewLabel = new JLabel("Home page");
-      lblNewLabel.setFont(new Font("Sitka Small", Font.ITALIC, 20));
-      lblNewLabel.setForeground(Color.WHITE);
-      lblNewLabel.setBounds(129, 42, 126, 49);
-      frame.getContentPane().add(lblNewLabel);
+      JLabel HomepageLabel = new JLabel("Home page");
+      HomepageLabel.setFont(new Font("Sitka Small", Font.ITALIC, 20));
+      HomepageLabel.setForeground(Color.WHITE);
+      HomepageLabel.setBounds(129, 42, 126, 49);
+      frame.getContentPane().add(HomepageLabel);
 
-      JLabel lblNewLabel_1 = new JLabel("");
+      JLabel Accountingimg = new JLabel("");
       Image img = new ImageIcon(this.getClass().getResource("/Accounting.png")).getImage();
-      lblNewLabel_1.setIcon(new ImageIcon(img));
-      lblNewLabel_1.setBounds(-12, 10, 299, 60);
-      frame.getContentPane().add(lblNewLabel_1);
+      Accountingimg.setIcon(new ImageIcon(img));
+      Accountingimg.setBounds(-12, 10, 299, 60);
+      frame.getContentPane().add(Accountingimg);
 
-      JLabel lblNewLabel_2 = new JLabel("");
+      JLabel Pigimg = new JLabel("");
       img = new ImageIcon(this.getClass().getResource("/pig.png")).getImage();
-      lblNewLabel_2.setIcon(new ImageIcon(img));
-      lblNewLabel_2.setBounds(70, 229, 261, 331);
-      frame.getContentPane().add(lblNewLabel_2);
+      Pigimg.setIcon(new ImageIcon(img));
+      Pigimg.setBounds(70, 229, 261, 331);
+      frame.getContentPane().add(Pigimg);
 
    }
 

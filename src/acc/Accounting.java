@@ -83,17 +83,17 @@ private void initialize() {
    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
    frame.getContentPane().setLayout(null);
 
-   JButton btnNewButton = new JButton("Back");
-   btnNewButton.setBackground(new Color(255, 250, 250));
-   btnNewButton.addActionListener(new ActionListener() {
+   JButton backButton = new JButton("Back");
+   backButton.setBackground(new Color(255, 250, 250));
+   backButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
          frame.setVisible(false);
       }
    });
-   btnNewButton.setFont(new Font("Dialog", Font.BOLD, 14));
-   btnNewButton.setBounds(10, 10, 61, 38);
-   frame.getContentPane().add(btnNewButton);
+   backButton.setFont(new Font("Dialog", Font.BOLD, 14));
+   backButton.setBounds(10, 10, 61, 38);
+   frame.getContentPane().add(backButton);
 
    JPanel panel = new JPanel();
    panel.setBounds(10, 58, 423, 385);
@@ -151,7 +151,7 @@ private void initialize() {
                   }
 
                   if (budget < sum) {
-                     JOptionPane.showMessageDialog(btnNewButton, 
+                     JOptionPane.showMessageDialog(backButton, 
                         "YOU ARE OVER BUDGET.",
                         "Budget Exceeded", 
                         JOptionPane.WARNING_MESSAGE);
@@ -177,50 +177,51 @@ private void initialize() {
    table.setRowSorter(rowSorter);
    table.setModel(tableModel1);
    panel.add(table.getTableHeader(), BorderLayout.NORTH);
-   JLabel lblNewLabel = new JLabel("None record yet...");
-   panel.add(lblNewLabel);
-   lblNewLabel.setFont(new Font("Lucida Bright", Font.PLAIN, 18));
-   lblNewLabel.setForeground(Color.BLACK);
+
+   JLabel NoneLabel = new JLabel("None record yet...");
+   panel.add(NoneLabel);
+   NoneLabel.setFont(new Font("Lucida Bright", Font.PLAIN, 18));
+   NoneLabel.setForeground(Color.BLACK);
    panel.add(table, BorderLayout.CENTER);
-   JButton btnNewButton_1 = new JButton("+");
-   btnNewButton_1.addActionListener(new ActionListener() {
+   JButton AddButton = new JButton("+");
+   AddButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
          ((DefaultTableModel) tableModel1).addRow(new Object[]{""});
-         lblNewLabel.setVisible(false);
+         NoneLabel.setVisible(false);
       }
    });
-   btnNewButton_1.setFont(new Font("Dialog", Font.BOLD, 24));
-   btnNewButton_1.setBackground(new Color(255, 250, 250));
-   btnNewButton_1.setBounds(372, 13, 61, 38);
-   frame.getContentPane().add(btnNewButton_1);
+   AddButton.setFont(new Font("Dialog", Font.BOLD, 24));
+   AddButton.setBackground(new Color(255, 250, 250));
+   AddButton.setBounds(372, 13, 61, 38);
+   frame.getContentPane().add(AddButton);
 
    textField_1 = new JTextField();
    textField_1.setBounds(137, 21, 86, 21);
    frame.getContentPane().add(textField_1);
    textField_1.setColumns(10);
 
-   JLabel lblNewLabel_1 = new JLabel("Settlement");
-   lblNewLabel_1.setForeground(Color.WHITE);
-   lblNewLabel_1.setFont(new Font("Consolas", Font.BOLD, 11));
-   lblNewLabel_1.setBounds(75, 10, 66, 38);
-   frame.getContentPane().add(lblNewLabel_1);
+   JLabel SettlementLabel = new JLabel("Settlement");
+   SettlementLabel.setForeground(Color.WHITE);
+   SettlementLabel.setFont(new Font("Consolas", Font.BOLD, 11));
+   SettlementLabel.setBounds(75, 10, 66, 38);
+   frame.getContentPane().add(SettlementLabel);
 
-   JLabel lblNewLabel_2 = new JLabel("Average");
-   lblNewLabel_2.setForeground(Color.WHITE);
-   lblNewLabel_2.setFont(new Font("Consolas", Font.BOLD, 11));
-   lblNewLabel_2.setBounds(233, 14, 52, 32);
-   frame.getContentPane().add(lblNewLabel_2);
+   JLabel AverageLabel = new JLabel("Average");
+   AverageLabel.setForeground(Color.WHITE);
+   AverageLabel.setFont(new Font("Consolas", Font.BOLD, 11));
+   AverageLabel.setBounds(233, 14, 52, 32);
+   frame.getContentPane().add(AverageLabel);
 
    textField_2 = new JTextField();
    textField_2.setBounds(284, 19, 86, 21);
    frame.getContentPane().add(textField_2);
    textField_2.setColumns(10);
 
-   JButton btnNewButton_2 = new JButton("export");
-   btnNewButton_2.setBackground(SystemColor.control);
-   btnNewButton_2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-   btnNewButton_2.addActionListener(new ActionListener() {
+   JButton exportButton = new JButton("export");
+   exportButton.setBackground(SystemColor.control);
+   exportButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+   exportButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
          String filePath = "hello/data.csv";
@@ -253,13 +254,13 @@ private void initialize() {
          }
       }
    });
-   btnNewButton_2.setBounds(10, 467, 124, 54);
-   frame.getContentPane().add(btnNewButton_2);
+   exportButton.setBounds(10, 467, 124, 54);
+   frame.getContentPane().add(exportButton);
 
-   JButton btnNewButton_2_1 = new JButton("import");
-   btnNewButton_2_1.setBackground(SystemColor.control);
-   btnNewButton_2_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-   btnNewButton_2_1.addActionListener(new ActionListener() {
+   JButton importButton = new JButton("import");
+   importButton.setBackground(SystemColor.control);
+   importButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+   importButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
          String filePath = "hello/data.csv";
@@ -325,7 +326,7 @@ private void initialize() {
                      }
 
                      if (budget < lastNumber) {
-                        JOptionPane.showMessageDialog(btnNewButton, 
+                        JOptionPane.showMessageDialog(backButton, 
                            "YOU ARE OVER BUDGET.",
                            "Budget Exceeded", 
                            JOptionPane.WARNING_MESSAGE);
@@ -361,13 +362,13 @@ private void initialize() {
          }
       }
    });
-   btnNewButton_2_1.setBounds(161, 467, 124, 54);
-   frame.getContentPane().add(btnNewButton_2_1);
+   importButton.setBounds(161, 467, 124, 54);
+   frame.getContentPane().add(importButton);
 
-   JButton btnNewButton_2_1_1 = new JButton("delete");
-   btnNewButton_2_1_1.setBackground(SystemColor.control);
-   btnNewButton_2_1_1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
-   btnNewButton_2_1_1.addActionListener(new ActionListener() {
+   JButton deleteButton = new JButton("delete");
+   deleteButton.setBackground(SystemColor.control);
+   deleteButton.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
+   deleteButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
          DefaultTableModel dm = (DefaultTableModel) table.getModel();
          int rowCount = dm.getRowCount();
@@ -378,8 +379,8 @@ private void initialize() {
          textField_2.setText("0.0");
       }
    });
-   btnNewButton_2_1_1.setBounds(308, 467, 124, 54);
-   frame.getContentPane().add(btnNewButton_2_1_1);
+   deleteButton.setBounds(308, 467, 124, 54);
+   frame.getContentPane().add(deleteButton);
 
    JScrollBar scrollBar = new JScrollBar();
    scrollBar.setBackground(SystemColor.controlDkShadow);

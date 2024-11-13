@@ -133,16 +133,16 @@ public class GraphAnalysis {
         chartPanel.setBounds(0, 0, 633, 419);
         panel_1.add(chartPanel);
 
-        JButton btnNewButton_1 = new JButton("Back");
-        btnNewButton_1.setBounds(0, 0, 61, 38);
-        frame2.getContentPane().add(btnNewButton_1);
-        btnNewButton_1.addActionListener(new ActionListener() {
+        JButton backButton = new JButton("Back");
+        backButton.setBounds(0, 0, 61, 38);
+        frame2.getContentPane().add(backButton);
+        backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame2.setVisible(false);
             }
         });
-        btnNewButton_1.setFont(new Font("Dialog", Font.BOLD, 14));
-        btnNewButton_1.setBackground(new Color(255, 250, 250));
+        backButton.setFont(new Font("Dialog", Font.BOLD, 14));
+        backButton.setBackground(new Color(255, 250, 250));
 
         frame2.setVisible(true);
     }
